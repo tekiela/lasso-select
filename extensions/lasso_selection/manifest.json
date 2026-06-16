@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Turtlestitch / Snap! 11 Lasso Selection",
+  "version": "2.0",
+  "description": "Adds rectangle lasso multi-selection, Alt-click toggle, Select All (Cmd+A/Ctrl+A), and Backspace/Delete shortcuts to Turtlestitch & Snap! 11 workspaces.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://snap.berkeley.edu/snap/snap.html*",
+        "https://www.turtlestitch.org/*",
+        "http://localhost:8000/*",
+        "http://127.0.0.1:8000/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "snap-lasso-selection@antigravity.addon"
+    }
+  }
+}
