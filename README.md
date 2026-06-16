@@ -1,6 +1,6 @@
 # Turtlestitch Lasso Selection Tool
 
-An intuitive rectangle lasso multi-selection tool, Alt-click toggle selection, Select All shortcut, and Backspace/Delete keyboard shortcut manager for Turtlestitch and Snap! 11 (Morphic) workspaces.
+An intuitive rectangle lasso multi-selection tool, Alt-click toggle selection, Select All shortcut, and Backspace/Delete keyboard shortcut manager for Turtlestitch and Snap! 11.
 
 This tool works on both **local** Snap! instances and the official editors at **`https://turtlestitch.org`** and **`https://snap.berkeley.edu`**.
 
