@@ -10,7 +10,7 @@ It works on both **local** TurtleStich installs and **online** at **[TurtleStitc
 ---
 
 ## ✨ Features
-* **Lasso SELECTION:** Click and drag to draw a bright green bounding box to select blocks.
+* **Lasso SELECT:** Click and drag to draw a bright green bounding box to select blocks.
 * **Lasso GROUP:** Lassoing a group of blocks selects the entire connected group.
 * **INVERT w. Alt-Drag:** Hold `Alt` while dragging a lasso to instantly invert block selection!
 * **ADD w. Alt-Click:** Press and hold `Alt` (or `Option` on macOS) to add to, or remove it from, the active selection. Clicking mid-group toggles the group status.
