@@ -4,7 +4,7 @@ Tired of deleting 50 blocks one by one? This new feature for TurtleStitch lets y
 
 This tool also works directly on **[TurtleStitch.org](https://turtlestitch.org)** because its browser based.
 
-![Lasso Selection Banner](https://img.shields.io/badge/Snap!-Lasso%20Selection-brightgreen?style=for-the-badge&logo=javascript)
+![Lasso Selection Banner](https://img.shields.io/badge/Snap!-Lasso%20Select-brightgreen?style=for-the-badge&logo=javascript)
 ![Version](https://img.shields.io/badge/version-3.0-blue?style=for-the-badge)
 
 ---
