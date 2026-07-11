@@ -2,7 +2,7 @@
 
 Tired of deleting 50 blocks one by one? This new feature for TurtleStitch lets you lasso-select, move, and delete groups of blocks right in the editor.
 
-This tool also works directly on **[TurtleStitch.org](https://turtlestitch.org)** because its browser based.
+It works on both **local** TurtleStich installs and **online** at **[TurtleStitch.org](https://turtlestitch.org)** because its browser based.
 
 ![Lasso Selection Banner](https://img.shields.io/badge/Snap!-Lasso%20Select-brightgreen?style=for-the-badge&logo=javascript)
 ![Version](https://img.shields.io/badge/version-3.0-blue?style=for-the-badge)
