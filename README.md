@@ -14,7 +14,7 @@ It works on both **local** TurtleStich installs and **online** at **[TurtleStitc
 * **Lasso GROUP:** Lassoing a group of blocks selects the entire connected group.
 * **INVERT w. Alt-Drag:** Hold `Alt` while dragging a lasso to instantly invert block selection!
 * **ADD w. Alt-Click:** Press and hold `Alt` (or `Option` on macOS) to add to, or remove it from, the active selection. Clicking mid-group toggles the group status.
-* **Select ALL:** Press `Cmd+A` (macOS) or `Ctrl+A` (Windows/Linux) to select all blocks in the workspace.
+* **Select ALL:** Press `Cmd+A` (mac) or `Ctrl+A` (Win) to select all blocks in the workspace.
 * **Deletion:** Press `Backspace` or `Delete` keys to delete selected blocks.
 * **Right-Click:** selected group to see context menu and duplicate or delete the selection.
 
