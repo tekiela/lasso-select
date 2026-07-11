@@ -1,8 +1,8 @@
 # Turtlestitch Lasso Selection Tool
 
-An intuitive rectangle lasso multi-selection tool, Alt-click toggle selection, Select All shortcut, and Backspace/Delete keyboard shortcut manager for Turtlestitch and Snap! 11.
+An intuitive rectangle lasso multi-selection tool: Alt-click toggle selection, Select-All shortcut, and Delete explicitly built for the Turtlestitch editor!
 
-This tool works on both **local** Snap! instances and the official editors at **`https://turtlestitch.org`** and **`https://snap.berkeley.edu`**.
+This tool works flawlessly on the official editor at **`https://turtlestitch.org`** (and supports legacy Snap! 11 installs).
 
 ![Lasso Selection Banner](https://img.shields.io/badge/Snap!-Lasso%20Selection-brightgreen?style=for-the-badge&logo=javascript)
 ![Version](https://img.shields.io/badge/version-3.0-blue?style=for-the-badge)
@@ -10,65 +10,36 @@ This tool works on both **local** Snap! instances and the official editors at **
 ---
 
 ## ✨ Features
-* **Intuitive Lasso Selection:** Draw a selection box over any area to instantly highlight all contained blocks.
-* **Toggle Selections with Alt:** Easily add or remove specific blocks or regions from your selection without starting over.
-* **Smart Grouping:** Select an entire stack of blocks by simply lassoing a small part of it.
-* **Quick Select All:** Use standard shortcuts (Cmd/Ctrl + A) to grab everything in your workspace instantly.
-* **Effortless Cleanup:** Delete complex groups of blocks with a single press of the Backspace or Delete key.
-* **Seamless Duplication:** Use the right-click menu to duplicate entire selected groups in one click.
+* **Lasso SELECTION:** Click and drag to draw a bright green bounding box to select blocks.
+* **Lasso GROUP:** Lassoing a group of blocks selects the entire connected group.
+* **INVERT w. Alt-Drag:** Hold `Alt` while dragging a lasso to instantly invert block selection!
+* **ADD w. Alt-Click:** Press and hold `Alt` (or `Option` on macOS) to add to, or remove it from, the active selection. Clicking mid-group toggles the group status.
+* **Select ALL:** Press `Cmd+A` (macOS) or `Ctrl+A` (Windows/Linux) to select all blocks in the workspace.
+* **Deletion:** Press `Backspace` or `Delete` keys to delete selected blocks.
+* **Right-Click:** selected group to see context menu and duplicate or delete the selection.
 
 ---
 
-## 🚀 Installation & Loading Methods
+## 🚀 Installation
 
-Choose the loading format that best fits your workflow:
-
-### Method 1: Portable XML Library (Recommended for Safari & Firefox)
-This runs 100% offline, bypasses browser bookmark URL length limits, and works across all browsers.
-1. Download [libraries/lasso_selection.xml](libraries/lasso_selection.xml).
-2. Open any Snap! editor window.
-3. Drag and drop the `.xml` file into the editor (or import it via **File -> Import...**).
-4. Open the Snap! **Settings** menu (gear icon) and make sure **Enable JavaScript extensions** is **checked**.
+### Method 1: TurtleStitch Library (Recommended for Safari & Firefox)
+This runs 100% offline, and works across all browsers BUT demands JavaScript extensions ON:
+1. **Right-click** and save this link: [lasso_selection.xml](https://raw.githubusercontent.com/tekiela/snap11-lassoselect/main/libraries/lasso_selection.xml).
+2. Open any TurtleStitch window.
+3. Open the **Settings** menu (gear icon) and make sure **Enable JavaScript extensions** is **checked**.
+4. Drag and drop the `lasso_selection.xml` file into the editor (or via **File -> Import...**).
 5. Find the new block **`[enable lasso selection]`** under the **Control** category palette and click it once.
 
 ---
 
 ### Method 2: Bookmarklet (Zero-Install)
-Bookmarklets run JavaScript directly in your active tab.
+Bookmarklets run JavaScript directly in your active tab and can be run online AND offline.
 
-#### Option A — CDN Loader *(always up to date, requires internet)*
-1. Create a new bookmark in your browser named **Snap! Lasso Tool**.
+#### AUTOMATIC UPDATE — CDN Loader *(always up to date, requires internet)*
+1. Create a new bookmark in your browser named **TurtleStitch Lasso**.
 2. Replace the URL with this code:
    ```javascript
-   javascript:(function(){var targetWin=window;try{for(var i=0;i<window.frames.length;i++){if(window.frames[i].ScriptsMorph){targetWin=window.frames[i];break;}}}catch(e){}var s=targetWin.document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/tekiela/snap11-lassoselect@main/extensions/lasso_selection/inject.js?v=' + Date.now();targetWin.document.body.appendChild(s);})();
-   ```
-3. Open a Snap! editor page and click the bookmark to activate.
-
-#### Option B — Self-contained offline bookmarklet *(no internet needed)*
-The entire extension is pre-minified into a single URL-safe string in [minified_bookmarklet.txt](minified_bookmarklet.txt).
-1. Open [minified_bookmarklet.txt](https://raw.githubusercontent.com/tekiela/snap11-lassoselect/main/minified_bookmarklet.txt) — you will see one long line of text.
-2. Select all and copy it.
-3. Create a new bookmark named **Snap! Lasso v3 (offline)** and paste it into the URL field.
-4. Open a Snap! editor page and click the bookmark to activate.
-
----
-
-### Method 3: Browser Extension (Persistent & Automatic)
-Loads the lasso tool automatically on every Snap! tab you open.
-
-#### For Chrome / Chromium Browsers:
-1. Download or clone this repository to your computer.
-2. Open Chrome and navigate to `chrome://extensions/`.
-3. Enable **Developer mode** (top-right toggle).
-4. Click **Load unpacked** (top-left) and select the `extensions/lasso_selection` directory.
-
-#### For Firefox:
-1. Open Firefox and go to `about:debugging`.
-2. Click **This Firefox** -> **Load Temporary Add-on...**
-3. Select `manifest.json` inside the `extensions/lasso_selection` folder.
-
----
-
+   javascript:(function(){var targetWin=window;try{for(var i=0;i<window.frames.length;i++){if(window.frames[i].ScriptsMorph){targetWin=window.frames[i];break;}}}catch(e){}var s=targetWin.document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/tekiela/snap11-lassoselect@main/extensions/lasso_selection/inject.js';targetWin.document.body.appendChild(s);})();
 ## ⌨️ Keyboard Shortcuts
 
 | Shortcut | Action |
@@ -77,10 +48,3 @@ Loads the lasso tool automatically on every Snap! tab you open.
 | `Backspace` / `Delete` | Delete the active selection |
 | `Alt` + Click | Toggle a block or comment in/out of the selection |
 
----
-
-## 🛠️ Technology Stack
-* **Language:** Vanilla JavaScript (ES5 compatible for wide Morphic engine support).
-* **UI Overlays:** HTML5 Canvas extensions & dynamic CSS-in-JS toast notifications.
-
----
