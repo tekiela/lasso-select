@@ -2,7 +2,7 @@
 
 An intuitive rectangle lasso multi-selection tool: Alt-click toggle selection, Select-All shortcut, and Delete explicitly built for the Turtlestitch editor!
 
-This tool also works on the official editor at **`https://turtlestitch.org`**.
+This tool also works on the official editor at **`https://turtlestitch.org`(https://turtlestitch.org)**.
 
 ![Lasso Selection Banner](https://img.shields.io/badge/Snap!-Lasso%20Selection-brightgreen?style=for-the-badge&logo=javascript)
 ![Version](https://img.shields.io/badge/version-3.0-blue?style=for-the-badge)
