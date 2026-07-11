@@ -1,6 +1,6 @@
 # Turtlestitch Lasso Selection Tool
 
-An intuitive rectangle lasso multi-selection tool: Alt-click toggle selection, Select-All shortcut, and Delete explicitly built for the Turtlestitch editor!
+An intuitive rectangle lasso selection tool for TurtleStitch: select groups of blocks, add or remove with Alt-click, use Select-All, and delete right in the editor.
 
 This tool also works on the official editor at **`https://turtlestitch.org`(https://turtlestitch.org)**.
 
