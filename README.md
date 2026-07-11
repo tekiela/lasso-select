@@ -1,8 +1,8 @@
 # TurtleStitch Lasso Select
 
-An intuitive lasso-select feature for TurtleStitch: select groups of blocks, add or remove with Alt-click, use Select All, and delete right in the editor.
+Tired of dragging 50 blocks one by one? This new feature for TurtleStitch lets you lasso-select, move, and delete groups of blocks right in the editor.
 
-This tool also works on the official editor at **[TurtleStitch](https://turtlestitch.org)**.
+This tool also works directly on **[TurtleStitch](https://turtlestitch.org)** because its browser based.
 
 ![Lasso Selection Banner](https://img.shields.io/badge/Snap!-Lasso%20Selection-brightgreen?style=for-the-badge&logo=javascript)
 ![Version](https://img.shields.io/badge/version-3.0-blue?style=for-the-badge)
