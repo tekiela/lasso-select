@@ -22,7 +22,7 @@ This tool also works directly on **[TurtleStitch.org](https://turtlestitch.org)*
 
 ## 🚀 Installation
 
-### Method 1: TurtleStitch Library.
+### Method 1: TurtleStitch Library
 This runs 100% offline, and works across all browsers BUT demands JavaScript extensions ON:
 1. **Right-click** and save this link: [lasso_selection.xml](https://raw.githubusercontent.com/tekiela/snap11-lassoselect/main/libraries/lasso_selection.xml).
 2. Open any TurtleStitch window.
