@@ -40,6 +40,44 @@ Bookmarklets run JavaScript directly in your active tab and can be run online AN
 2. Replace the URL with this code:
    ```javascript
    javascript:(function(){var targetWin=window;try{for(var i=0;i<window.frames.length;i++){if(window.frames[i].ScriptsMorph){targetWin=window.frames[i];break;}}}catch(e){}var s=targetWin.document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/tekiela/snap11-lassoselect@main/extensions/lasso_selection/inject.js';targetWin.document.body.appendChild(s);})();
+
+3. Open the editor and click the browser-bookmark to activate (confirmation will appear at bottom when loaded correctly)
+
+#### MANUAL UPDATE — offline bookmarklet *(no internet needed)*
+Download the offline version here: [minified_bookmarklet.txt](minified_bookmarklet.txt).
+1. Open 'minified_bookmarklet.txt' — you will see one long line of text.
+2. Select all and copy it.
+3. Create a new bookmark named **Snap! Lasso v3 (offline)** and paste it into the URL field.
+4. Open a Snap! editor page and click the bookmark to activate.
+
+---
+
+### Method 3: Browser Extension (Persistent w. restart)
+Loads the lasso tool automatically on every Snap! tab you open.
+
+#### For Chrome / Chromium Browsers:
+1. Download or clone this repository to your computer.
+2. Open Chrome and navigate to `chrome://extensions/`.
+3. Enable **Developer mode** (top-right toggle).
+4. Click **Load unpacked** (top-left) and select the `extensions/lasso_selection` directory.
+
+#### For Firefox:
+1. Open Firefox and go to `about:debugging`.
+2. Click **This Firefox** -> **Load Temporary Add-on...**
+3. Select `manifest.json` inside the `extensions/lasso_selection` folder.
+
+---
+
+## ⌨️ Keyboard Shortcuts
+
+| Shortcut | Action |
+|---|---|
+| `Cmd+A` / `Ctrl+A` | Select all blocks and comments in the workspace |
+| `Backspace` / `Delete` | Delete the active selection |
+| `Alt` + Click | Toggle a block or comment in/out of the selection |
+
+
+   
 ## ⌨️ Keyboard Shortcuts
 
 | Shortcut | Action |
