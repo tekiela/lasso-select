@@ -39,8 +39,8 @@ Bookmarklets run JavaScript directly in your active tab.
 #### Option A — CDN Loader *(always up to date, requires internet)*
 1. Create a new bookmark in your browser named **Snap! Lasso Tool**.
 2. Replace the URL with this code:
-   ```
-   javascript:(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/tekiela/snap11-lassoselect@main/extensions/lasso_selection/inject.js';document.body.appendChild(s);})();
+   ```javascript
+   javascript:(function(){var targetWin=window;try{for(var i=0;i<window.frames.length;i++){if(window.frames[i].ScriptsMorph){targetWin=window.frames[i];break;}}}catch(e){}var s=targetWin.document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/tekiela/snap11-lassoselect@main/extensions/lasso_selection/inject.js?v=' + Date.now();targetWin.document.body.appendChild(s);})();
    ```
 3. Open a Snap! editor page and click the bookmark to activate.
 
