@@ -1,4 +1,4 @@
-# TurtleStitch Lasso Select
+# Lasso Select
 
 Tired of deleting 50 blocks one by one? This new feature for TurtleStitch lets you lasso-select, move, and delete groups of blocks right in the editor.
 
