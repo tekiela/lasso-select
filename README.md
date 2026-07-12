@@ -35,7 +35,7 @@ This runs 100% offline, and works across all browsers BUT demands JavaScript ext
 ### Method 2: Bookmarklet (Zero-Install)
 Bookmarklets run JavaScript directly in your active tab and can be run online AND offline.
 
-#### AUTOMATIC UPDATE — CDN Loader *(always up to date, requires internet)*
+2A #### AUTOMATIC UPDATE — CDN Loader *(always up to date, requires internet)*
 1. Create a new bookmark in your browser named **TurtleStitch Lasso**.
 2. Replace the URL with this code:
    ```javascript
@@ -43,7 +43,7 @@ Bookmarklets run JavaScript directly in your active tab and can be run online AN
 
 3. Open the editor and click the browser-bookmark to activate (confirmation will appear at bottom when loaded correctly)
 
-#### MANUAL UPDATE — offline bookmarklet *(no internet needed)*
+2B #### MANUAL UPDATE — offline bookmarklet *(no internet needed)*
 Download the offline version here: [minified_bookmarklet.txt](minified_bookmarklet.txt).
 1. Open 'minified_bookmarklet.txt' — you will see one long line of text.
 2. Select all and copy it.
