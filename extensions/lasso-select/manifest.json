@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Turtlestitch / Snap! 11 Lasso Selection",
-  "version": "2.0",
-  "description": "Adds rectangle lasso multi-selection, Alt-click toggle, Select All (Cmd+A/Ctrl+A), and Backspace/Delete shortcuts to Turtlestitch & Snap! 11 workspaces.",
+  "name": "Lasso-select for TurtleStitch and Snap!",
+  "version": "3.1",
+  "description": "Adds rectangle lasso multi-selection, Alt-click toggle, Select All (Cmd+A/Ctrl+A), and Backspace/Delete shortcuts to TurtleStitch & Snap! workspaces.",
   "permissions": ["activeTab"],
   "content_scripts": [
     {

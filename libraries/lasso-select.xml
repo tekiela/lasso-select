@@ -1,5 +1,5 @@
 <blocks app="Snap! 12-dev, https://snap.berkeley.edu" version="2">
-  <block-definition s="Enable lasso-select" type="command" category="control">
+  <block-definition s="enable lasso-select" type="command" category="control">
     <comment w="320" collapsed="false">Enables Workspace Lasso Selection.&#xD;&#xD;Make sure &quot;JavaScript extensions&quot; is enabled in Snap! settings before running this block.&#xD;&#xD;Clicking this block will inject the lasso tool prototypes into the Morphic world, allowing you to select blocks, comments, and delete/duplicate them using the Alt key, Delete/Backspace keys, and Cmd+A/Ctrl+A to select all.</comment>
     <header></header>
     <code></code>
@@ -10,10 +10,7 @@
         <block s="reportJSFunction">
           <list></list>
           <l>(function() {&#xD;
-    var SILENT_MODE = false; // Change this to true to suppress the "Lasso active" toast popup&#xD;
-&#xD;
     function showToast(message) {&#xD;
-        if (SILENT_MODE) return;&#xD;
         var toast = document.createElement('div');&#xD;
         toast.textContent = message;&#xD;
         toast.style.position = 'fixed';&#xD;
@@ -24,8 +21,8 @@
         toast.style.color = '#ffffff';&#xD;
         toast.style.padding = '12px 24px';&#xD;
         toast.style.borderRadius = '12px';&#xD;
-        toast.style.border = '1px solid rgba(153, 255, 213, 0.35)';&#xD;
-        toast.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(153, 255, 213, 0.15)';&#xD;
+        toast.style.border = '1px solid rgba(225, 130, 25, 0.35)';&#xD;
+        toast.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(225, 130, 25, 0.15)';&#xD;
         toast.style.fontFamily = 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';&#xD;
         toast.style.fontSize = '14px';&#xD;
         toast.style.fontWeight = '500';&#xD;
@@ -51,7 +48,7 @@
             setTimeout(function() {&#xD;
                 toast.remove();&#xD;
             }, 400);&#xD;
-        }, 2500);&#xD;
+        }, 1200);&#xD;
     }&#xD;
 &#xD;
     function initLassoExtension() {&#xD;
@@ -61,14 +58,14 @@
         }&#xD;
 &#xD;
         if (window.lassoExtensionLoaded) {&#xD;
-            showToast("Lasso selection already active");&#xD;
+            showToast("Lasso Select already active");&#xD;
             return;&#xD;
         }&#xD;
         window.lassoExtensionLoaded = true;&#xD;
 &#xD;
-        console.log("Snap! Workspace Lasso Selection extension successfully loaded.");&#xD;
+        console.log("Snap! Workspace Lasso-select extension successfully loaded.");&#xD;
 &#xD;
-        // 1. Define the Lasso Selection Container Group Morph&#xD;
+        // 1. Define the Lasso-select Container Group Morph&#xD;
         window.LassoGroupMorph = function() {&#xD;
             this.init();&#xD;
         };&#xD;
@@ -136,7 +133,9 @@
         LassoGroupMorph.prototype.highlightChild = function (aMorph) {&#xD;
             if (aMorph instanceof BlockMorph) {&#xD;
                 if (!aMorph.getHighlight()) {&#xD;
-                    aMorph.addHighlight(); // green-blueish activeHighlight glow&#xD;
+                    aMorph.activeHighlight = new Color(225, 130, 25);&#xD;
+                    aMorph.activeBorder = 3;&#xD;
+                    aMorph.addHighlight();&#xD;
                 }&#xD;
             }&#xD;
         };&#xD;
@@ -334,7 +333,7 @@
             }&#xD;
         };&#xD;
 &#xD;
-        // 5. Override Workspace Lasso Selection Events&#xD;
+        // 5. Override Workspace Lasso-select Events&#xD;
         var originalScriptsMouseDownLeft = ScriptsMorph.prototype.mouseDownLeft;&#xD;
         ScriptsMorph.prototype.mouseDownLeft = function (pos) {&#xD;
             var shiftClicked = this.world() &amp;&amp; this.world().currentKey === 16;&#xD;
@@ -361,25 +360,14 @@
 &#xD;
             if (this.focus) { this.focus.stopEditing(); }&#xD;
 &#xD;
-            // Clear any orphaned ghost lassos&#xD;
-            this.children.filter(function(child) {&#xD;
-                return child.isLassoFeedback === true;&#xD;
-            }).forEach(function(box) {&#xD;
-                box.destroy();&#xD;
-            });&#xD;
-            if (this.lassoFeedback) {&#xD;
-                this.lassoFeedback = null;&#xD;
-            }&#xD;
-&#xD;
             this.lassoStart = pos;&#xD;
             this.lassoFeedback = new BoxMorph();&#xD;
-            this.lassoFeedback.color = new Color(153, 255, 213, 0.12);&#xD;
-            this.lassoFeedback.borderColor = new Color(153, 255, 213, 0.85);&#xD;
+            this.lassoFeedback.color = new Color(225, 130, 25, 0.12);&#xD;
+            this.lassoFeedback.borderColor = new Color(225, 130, 25, 0.85);&#xD;
             this.lassoFeedback.border = 2;&#xD;
             this.lassoFeedback.setPosition(pos);&#xD;
             // Chromium throws RangeError on roundRect if width/height is less than border&#xD;
             this.lassoFeedback.setExtent(new Point(10, 10));&#xD;
-            this.lassoFeedback.isLassoFeedback = true;&#xD;
             this.add(this.lassoFeedback);&#xD;
 &#xD;
             this.lockMouseFocus();&#xD;
@@ -418,16 +406,7 @@
                 this.lassoFeedback = null;&#xD;
                 this.lassoStart = null;&#xD;
 &#xD;
-                var altHeld = this.world() &amp;&amp; this.world().hand.altPressed;&#xD;
-&#xD;
                 if (rect.width() &lt; 5 || rect.height() &lt; 5) {&#xD;
-                    if (!altHeld) {&#xD;
-                        this.children.filter(function(child) {&#xD;
-                            return child &amp;&amp; child.isLassoGroup === true;&#xD;
-                        }).forEach(function(g) {&#xD;
-                            g.unpack();&#xD;
-                        });&#xD;
-                    }&#xD;
                     return;&#xD;
                 }&#xD;
 &#xD;
@@ -438,16 +417,11 @@
                     }&#xD;
                 });&#xD;
 &#xD;
+                var altHeld = this.world() &amp;&amp; this.world().hand.altPressed;&#xD;
                 var group = null;&#xD;
                 if (altHeld) {&#xD;
                     group = this.children.find(function(child) {&#xD;
                         return child &amp;&amp; child.isLassoGroup === true;&#xD;
-                    });&#xD;
-                } else {&#xD;
-                    this.children.filter(function(child) {&#xD;
-                        return child &amp;&amp; child.isLassoGroup === true;&#xD;
-                    }).forEach(function(g) {&#xD;
-                        g.unpack();&#xD;
                     });&#xD;
                 }&#xD;
                 &#xD;
@@ -564,7 +538,7 @@
                 return;&#xD;
             }&#xD;
 &#xD;
-            // Backspace / Delete  — Delete the active lasso selection&#xD;
+            // Backspace / Delete  — Delete the active lasso-select&#xD;
             if (event.key === 'Backspace' || event.key === 'Delete') {&#xD;
                 if (!isEditingText) {&#xD;
                     var ide = worldObj.children[0];&#xD;
@@ -584,12 +558,12 @@
             }&#xD;
         }, true);&#xD;
 &#xD;
-        showToast("Lasso selection active ✦");&#xD;
+        showToast("✦ Lasso Select active ✦");&#xD;
     }&#xD;
 &#xD;
     initLassoExtension();&#xD;
 })();&#xD;
-
+&#xD;
 </l>
         </block>
         <list></list>

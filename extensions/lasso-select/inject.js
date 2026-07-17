@@ -1,8 +1,5 @@
 (function() {
-    var SILENT_MODE = false; // Change this to true to suppress the "Lasso active" toast popup
-
     function showToast(message) {
-        if (SILENT_MODE) return;
         var toast = document.createElement('div');
         toast.textContent = message;
         toast.style.position = 'fixed';
@@ -13,8 +10,8 @@
         toast.style.color = '#ffffff';
         toast.style.padding = '12px 24px';
         toast.style.borderRadius = '12px';
-        toast.style.border = '1px solid rgba(153, 255, 213, 0.35)';
-        toast.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(153, 255, 213, 0.15)';
+        toast.style.border = '1px solid rgba(225, 130, 25, 0.35)';
+        toast.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(225, 130, 25, 0.15)';
         toast.style.fontFamily = 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
         toast.style.fontSize = '14px';
         toast.style.fontWeight = '500';
@@ -40,7 +37,7 @@
             setTimeout(function() {
                 toast.remove();
             }, 400);
-        }, 2500);
+        }, 1200);
     }
 
     function initLassoExtension() {
@@ -50,14 +47,14 @@
         }
 
         if (window.lassoExtensionLoaded) {
-            showToast("Lasso selection already active");
+            showToast("Lasso Select already active");
             return;
         }
         window.lassoExtensionLoaded = true;
 
-        console.log("Snap! Workspace Lasso Selection extension successfully loaded.");
+        console.log("Snap! Workspace Lasso-select extension successfully loaded.");
 
-        // 1. Define the Lasso Selection Container Group Morph
+        // 1. Define the Lasso-select Container Group Morph
         window.LassoGroupMorph = function() {
             this.init();
         };
@@ -125,7 +122,9 @@
         LassoGroupMorph.prototype.highlightChild = function (aMorph) {
             if (aMorph instanceof BlockMorph) {
                 if (!aMorph.getHighlight()) {
-                    aMorph.addHighlight(); // green-blueish activeHighlight glow
+                    aMorph.activeHighlight = new Color(225, 130, 25);
+                    aMorph.activeBorder = 3;
+                    aMorph.addHighlight();
                 }
             }
         };
@@ -323,7 +322,7 @@
             }
         };
 
-        // 5. Override Workspace Lasso Selection Events
+        // 5. Override Workspace Lasso-select Events
         var originalScriptsMouseDownLeft = ScriptsMorph.prototype.mouseDownLeft;
         ScriptsMorph.prototype.mouseDownLeft = function (pos) {
             var shiftClicked = this.world() && this.world().currentKey === 16;
@@ -362,8 +361,8 @@
 
             this.lassoStart = pos;
             this.lassoFeedback = new BoxMorph();
-            this.lassoFeedback.color = new Color(153, 255, 213, 0.12);
-            this.lassoFeedback.borderColor = new Color(153, 255, 213, 0.85);
+            this.lassoFeedback.color = new Color(225, 130, 25, 0.12);
+            this.lassoFeedback.borderColor = new Color(225, 130, 25, 0.85);
             this.lassoFeedback.border = 2;
             this.lassoFeedback.setPosition(pos);
             // Chromium throws RangeError on roundRect if width/height is less than border
@@ -553,7 +552,7 @@
                 return;
             }
 
-            // Backspace / Delete  — Delete the active lasso selection
+            // Backspace / Delete  — Delete the active lasso-select
             if (event.key === 'Backspace' || event.key === 'Delete') {
                 if (!isEditingText) {
                     var ide = worldObj.children[0];
@@ -573,7 +572,7 @@
             }
         }, true);
 
-        showToast("Lasso selection active ✦");
+        showToast("✦ Lasso Select active ✦");
     }
 
     initLassoExtension();
