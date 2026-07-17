@@ -45,8 +45,8 @@ Bookmarklets run JavaScript directly in your active tab and can be run online AN
 3. Open the editor and click the browser-bookmark to activate (confirmation will appear at bottom when loaded correctly).
 
 **2B MANUAL UPDATE** — Offline Bookmarklet *(no internet needed)*
-Download the fully offline version here: [minified_bookmarklet.txt](minified_bookmarklet.txt).
-1. Open 'minified_bookmarklet.txt' — you will see one massive block of code.
+Download the fully offline version here: [offline-bookmarklet.txt](offline-bookmarklet.txt).
+1. Open 'offline-bookmarklet.txt' — you will see one massive block of code.
 2. Select all and copy it.
 3. Create a new bookmark named **Lasso Select** and paste the massive block of code into the URL field.
 4. Open a Snap! editor page and click the bookmark to activate.
