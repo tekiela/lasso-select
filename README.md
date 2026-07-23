@@ -23,7 +23,11 @@ It works on both in local installs and online because it's completely browser-ba
 
 ## 🚀 Installation
 
-### Method 1: TurtleStitch Library
+
+### Method 1: Firefox addon - One click to install
+https://addons.mozilla.org/en-US/firefox/addon/lasso-select-turtlestitch-snap/
+
+### Method 2: Bookmarklet (Zero-Install)
 This runs 100% offline, and works across all browsers BUT demands JavaScript extensions ON:
 1. **Right-click** and save this link: [lasso-select.xml](https://raw.githubusercontent.com/tekiela/lasso-select/main/libraries/lasso-select.xml).
 2. Open any TurtleStitch window.
@@ -33,10 +37,10 @@ This runs 100% offline, and works across all browsers BUT demands JavaScript ext
 
 ---
 
-### Method 2: Bookmarklet (Zero-Install)
+### Method 3: Bookmarklet (Zero-Install)
 Bookmarklets run JavaScript directly in your active tab and can be run online AND offline.
 
-**2A AUTOMATIC UPDATE** — Online Bookmarklet *(always up to date, requires internet)*
+**3A AUTOMATIC UPDATE** — Online Bookmarklet *(always up to date, requires internet)*
 1. Create a new bookmark in your browser named **Lasso Select**.
 2. Replace the URL with this code:
    ```javascript
@@ -44,28 +48,12 @@ Bookmarklets run JavaScript directly in your active tab and can be run online AN
    ```
 3. Open the editor and click the browser-bookmark to activate (confirmation will appear at bottom when loaded correctly).
 
-**2B MANUAL UPDATE** — Offline Bookmarklet *(no internet needed)*
+**3B MANUAL UPDATE** — Offline Bookmarklet *(no internet needed)*
 Download the fully offline version here: [offline-bookmarklet.txt](https://raw.githubusercontent.com/tekiela/lasso-select/main/offline-bookmarklet.txt).
 1. Open 'offline-bookmarklet.txt' — you will see one massive block of code.
 2. Select all and copy it.
 3. Create a new bookmark named **Lasso Select** and paste the massive block of code into the URL field.
 4. Open a Snap! editor page and click the bookmark to activate.
-
----
-
-### Method 3: Browser Extension (Persistent w. restart)
-Loads the lasso tool automatically on every Snap! tab you open.
-
-#### For Chrome / Chromium Browsers:
-1. Download or clone this repository to your computer.
-2. Open Chrome and navigate to `chrome://extensions/`.
-3. Enable **Developer mode** (top-right toggle).
-4. Click **Load unpacked** (top-left) and select the `extensions/lasso-select` directory.
-
-#### For Firefox:
-1. Open Firefox and go to `about:debugging`.
-2. Click **This Firefox** -> **Load Temporary Add-on...**
-3. Select `manifest.json` inside the `extensions/lasso-select` folder.
 
 ---
 
