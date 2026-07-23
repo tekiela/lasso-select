@@ -1,6 +1,7 @@
 # Lasso Select
 
-Tired of deleting 50 blocks one by one? This new feature for **Snap!** and **TurtleStitch** lets you lasso-select, move, duplicate, and delete groups of blocks right in the editor.
+Tired of deleting 50 blocks one by one?
+This new feature for **Snap!** and **TurtleStitch** lets you lasso-select, move, duplicate, and delete groups of blocks right in the editor.
 
 ![Lasso select demo](assets/start_small.gif)
 
