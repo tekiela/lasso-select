@@ -24,10 +24,10 @@ It works on both in local installs and online because it's completely browser-ba
 ## 🚀 Installation
 
 
-### Method 1: Firefox addon - One click to install
+### Method 1: FIREFOX ADDON - One click to install
 https://addons.mozilla.org/en-US/firefox/addon/lasso-select-turtlestitch-snap/
 
-### Method 2: Bookmarklet (Zero-Install)
+### Method 2: SNAP BLOCK (JavaScript ON)
 This runs 100% offline, and works across all browsers BUT demands JavaScript extensions ON:
 1. **Right-click** and save this link: [lasso-select.xml](https://raw.githubusercontent.com/tekiela/lasso-select/main/libraries/lasso-select.xml).
 2. Open any TurtleStitch window.
@@ -35,12 +35,10 @@ This runs 100% offline, and works across all browsers BUT demands JavaScript ext
 4. Drag and drop the `lasso-select.xml` file into the editor (or via **File -> Import...**).
 5. Find the new block **`[enable lasso-select]`** under the **Control** category palette and click it once.
 
----
-
-### Method 3: Bookmarklet (Zero-Install)
+### Method 3: BOOKMARKLET (Ze)
 Bookmarklets run JavaScript directly in your active tab and can be run online AND offline.
 
-**3A AUTOMATIC UPDATE** — Online Bookmarklet *(always up to date, requires internet)*
+**3A Online Bookmarklet *(always up to date, requires internet)*
 1. Create a new bookmark in your browser named **Lasso Select**.
 2. Replace the URL with this code:
    ```javascript
