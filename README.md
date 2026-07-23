@@ -35,10 +35,7 @@ This runs 100% offline, and works across all browsers BUT demands JavaScript ext
 4. Drag and drop the `lasso-select.xml` file into the editor (or via **File -> Import...**).
 5. Find the new block **`[enable lasso-select]`** under the **Control** category palette and click it once.
 
-### Method 3: BOOKMARKLET (Ze)
-Bookmarklets run JavaScript directly in your active tab and can be run online AND offline.
-
-**3A Online Bookmarklet *(always up to date, requires internet)*
+### Method 3A: ONLINE BOOKMARKLET *(always up to date, requires internet)*
 1. Create a new bookmark in your browser named **Lasso Select**.
 2. Replace the URL with this code:
    ```javascript
@@ -46,7 +43,7 @@ Bookmarklets run JavaScript directly in your active tab and can be run online AN
    ```
 3. Open the editor and click the browser-bookmark to activate (confirmation will appear at bottom when loaded correctly).
 
-**3B MANUAL UPDATE** — Offline Bookmarklet *(no internet needed)*
+### Method 3B: OFFLINE BOOKMARKLET *(requires NO internet)*
 Download the fully offline version here: [offline-bookmarklet.txt](https://raw.githubusercontent.com/tekiela/lasso-select/main/offline-bookmarklet.txt).
 1. Open 'offline-bookmarklet.txt' — you will see one massive block of code.
 2. Select all and copy it.
